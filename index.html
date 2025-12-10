@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OkwaID</title>
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow-x: hidden;
+    font-family: sans-serif;
+  }
+
+  /* BACKGROUND VIDEO */
+  .bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  .bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* KOTAK BLUR ATAS */
+  .blur-box {
+    width: 75%;
+    max-width: 260px;
+    height: 120px;
+    margin: 85px auto 0;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    border: 3px solid rgba(255, 255, 255, 0.55);
+    position: relative;
+    padding: 60px 10px 10px;
+    text-align: center;
+  }
+
+  /* FOTO PROFIL */
+  .profile {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #fff;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  }
+  .profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* TEKS DESKRIPSI */
+  .deskripsi {
+  font-size: 14px;
+  line-height: 1.45;
+  font-weight: 600;
+  text-align: center;
+
+  /* BIAR TIDAK PATAH-PATAH */
+  word-break: keep-all;
+  white-space: normal;
+  padding: 0 10px;
+
+  /* GRADIENT WARNA-WARNI */
+  background: linear-gradient(90deg, #ff5ec4, #ffd95e, #6bff8c, #5ed9ff, #c45eff);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  color: transparent;
+
+  /* ANIMASI MENYALA */
+  animation: glowText 6s ease infinite;
+
+  /* GLOW TIPIS */
+  text-shadow: 0 0 6px rgba(255,255,255,0.35);
+}
+
+@keyframes glowText {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+  /* AICON SOSMED */
+  .icons-box {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+  }
+
+  .icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgba(255,255,255,0.6);
+  }
+  .icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* BUTTON GLASS */
+  .link-btn {
+    width: 72%;
+    max-width: 270px;
+    background: rgba(255, 255, 255, 0.13);
+    backdrop-filter: blur(12px);
+    padding: 13px 18px;
+    border-radius: 35px;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    justify-content: flex-start;
+    border: 2px solid rgba(255, 255, 255, 0.55);
+    box-shadow: 0 0 12px rgba(0,0,0,0.25);
+  }
+
+  .link-dot {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgba(255,255,255,0.85);
+    flex-shrink: 0;
+  }
+
+  .link-dot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .link-section {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    width: 100%;
+  }
+
+
+  /* ============================
+     TARIK KE ATAS (WHITE BAR)
+     ============================ */
+  #pullTab {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 10px;
+    background: rgba(255,255,255,0.85);
+    border-radius: 20px;
+    cursor: grab;
+    z-index: 9999;
+    transition: 0.2s ease;
+  }
+  #pullTab:active {
+    cursor: grabbing;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- BACKGROUND VIDEO -->
+<div class="bg">
+  <video autoplay loop muted playsinline>
+    <source src="https://vy-z.vercel.app/E60s.mp4" type="video/mp4">
+  </video>
+</div>
+
+<!-- BOX PROFIL -->
+<div class="blur-box">
+
+  <div class="profile">
+    <img src="https://vy-z.vercel.app/f0qt.jpg">
+  </div>
+
+  <div class="deskripsi">
+    Selamat datang Di web OkwaID.<br>
+    Ini adalah Link media Sosial Ku.<br>
+    Jika kalian ingin berkunjung, memesan, atau donasi! Dan?<br>
+    Aku menghargai kedatangan kalian.<br>
+    Trimakasih 💙
+  </div>
+
+</div>
+
+<!-- AICON SOSMED -->
+<div class="icons-box">
+  <a href="startlight.id@gmail.com" target="_blank">
+    <div class="icon"><img src="https://vy-z.vercel.app/zOj8.jpg"></div>
+  </a>
+  <a href="wa.me/6285697058959" target="_blank">
+    <div class="icon"><img src="https://vy-z.vercel.app/N4k1.jpg"></div>
+  </a>
+  <a href="t.me/@Jayz4d" target="_blank">
+    <div class="icon"><img src="https://vy-z.vercel.app/avFV.jpg"></div>
+  </a>
+</div>
+
+<!-- BUTTON SECTION -->
+<div class="link-section">
+
+  <a href="https://www.tiktok.com/@okwaisjay?_r=1&_t=ZS-926KmbD9nML" class="link-btn">
+    <div class="link-dot"><img src="https://raw.githubusercontent.com/RIJALGANZZZ/dat4/main/uploads/5aae25-1765187134076.jpg"></div>
+    Tiktok
+  </a>
+
+  <a href="https://www.youtube.com/@okwaisjay" class="link-btn">
+    <div class="link-dot"><img src="https://vy-z.vercel.app/bJnH.jpg"></div>
+    Youtube
+  </a>
+
+  <a href="https://donasiokwaid.vercel.app" class="link-btn">
+    <div class="link-dot"><img src="https://vy-z.vercel.app/Fbzg.jpg"></div>
+    Donasi
+  </a>
+
+  <a href="https://whatsapp.com/channel/0029VbAZWJf4Y9lpx0wxCI0o" class="link-btn">
+    <div class="link-dot"><img src="https://vy-z.vercel.app/ngJY.jpg"></div>
+    Saluran
+  </a>
+
+</div>
+
+<!-- TARIK KE ATAS TAB + TEKS -->
+<div id="pullInfo">Tarik Garis ini jika ingin melihat daftar Shop Okwa</div>
+<div id="pullTab"></div>
+
+<style>
+  #pullInfo {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: white;
+  opacity: 0.85;
+  z-index: 9998;
+  pointer-events: none;
+  text-align: center;
+  width: 100%;
+}
+
+  #pullTab {
+    position: fixed;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 10px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 20px;
+    cursor: grab;
+    z-index: 9999;
+    transition: 0.2s ease;
+  }
+
+  #pullTab:active {
+    cursor: grabbing;
+  }
+</style>
+
+<script>
+let startY = 0;
+let dragging = false;
+const pullTab = document.getElementById("pullTab");
+const pullInfo = document.getElementById("pullInfo");
+
+// GANTI LINK SHOP DI SINI
+const redirectURL = "https://okwashopid.vercel.app";
+
+pullTab.addEventListener("touchstart", e => {
+  dragging = true;
+  startY = e.touches[0].clientY;
+
+  pullInfo.style.opacity = "0";   // teks disembunyikan saat tarik
+});
+
+pullTab.addEventListener("touchmove", e => {
+  if (!dragging) return;
+
+  let currentY = e.touches[0].clientY;
+  let distance = startY - currentY;
+
+  if (distance > 0) {
+    pullTab.style.height = "20px";
+    pullTab.style.width = "120px";
+  }
+
+  if (distance > 80) {
+    dragging = false;
+    window.location.href = redirectURL;
+  }
+});
+
+pullTab.addEventListener("touchend", () => {
+  dragging = false;
+  pullTab.style.height = "10px";
+  pullTab.style.width = "90px";
+
+  setTimeout(() => {
+    pullInfo.style.opacity = "0.85"; // teks muncul lagi setelah dilepas
+  }, 200);
+});
+</script>
+
+</body>
+</html>
